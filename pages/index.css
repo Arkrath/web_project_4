@@ -1,2 +1,22 @@
+@import url('../blocks/header/header.css');
 
+.page {
+  min-width: 100%;
+  background-color: black;
+  padding: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  }
 
+.page__container {
+  max-width: 882px;
+  margin: 0 auto;
+  color: white;
+  overflow: hidden;
+
+}
