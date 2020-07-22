@@ -12,59 +12,59 @@
       <img src="./images/AroundTheUS.png" alt="Site title" class="header__title">
     </header>
     <section class="profile">
-      <img class="profile__avatar" src="./images/profile picture.jpg" alt="Profile picture of user" >
+      <img class="profile__avatar" src="./images/profile_picture.jpg" alt="Profile picture of user">
       <div class="profile__info">
         <div class="profile__user-container">
           <h1 class="profile__user-name">Jacques Cousteau</h1>
-          <div class="profile__edit-button"><img src="./images/pencil icon.png" alt="pencil icon" class="profile__edit-icon"></div>
+          <div class="profile__edit-button"><img src="./images/pencil_icon.png" alt="pencil icon" class="profile__edit-icon"></div>
         </div>
         <p class="profile__user-description">Explorer</p>
       </div>
       <div class="profile__add-button">
-        <img src="./images/plus sign icon.png" alt="plus sign icon" class="profile__add-icon">
+        <img src="./images/plus_sign_icon.png" alt="plus sign icon" class="profile__add-icon">
       </div>
     </section>
     <section class="gallery">
       <ul class="gallery__grid">
         <li class="gallery__card">
-          <img src="./images/Yosemite Valley.jpg" alt="Yosemite valley picture" class="gallery__card-image">
+          <img src="./images/Yosemite-Valley.jpg" alt="Yosemite valley picture" class="gallery__card-image">
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Yosemite Valley</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/Yosemite Valley.jpg" alt="Yosemite valley picture" class="gallery__card-image">
+          <img src="./images/lake_louise.png" alt="Lake Louise" class="gallery__card-image">
           <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Yosemite Valley</h2>
+            <h2 class="gallery__card-title">Lake Louise</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/Yosemite Valley.jpg" alt="Yosemite valley picture" class="gallery__card-image">
+          <img src="./images/bald_mountains.png" alt="bald mountains" class="gallery__card-image">
           <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Yosemite Valley of wonder</h2>
+            <h2 class="gallery__card-title">Bald Mountains</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/Yosemite Valley.jpg" alt="Yosemite valley picture" class="gallery__card-image">
+          <img src="./images/latemar.png" alt="Yosemite valley picture" class="gallery__card-image">
           <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Yosemite Valley</h2>
+            <h2 class="gallery__card-title">Latemar</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/Yosemite Valley.jpg" alt="Yosemite valley picture" class="gallery__card-image">
+          <img src="./images/vanoise-national-park.png" alt="latemar mountains" class="gallery__card-image">
           <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Yosemite Valley</h2>
+            <h2 class="gallery__card-title">Vanoise National Park</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/Yosemite Valley.jpg" alt="Yosemite valley picture" class="gallery__card-image">
+          <img src="./images/lago_di_braies.png" alt="Vanoise national park" class="gallery__card-image">
           <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Yosemite Valley</h2>
+            <h2 class="gallery__card-title">Lago di Braies</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
@@ -74,4 +74,19 @@
       <p class="footer__copyright">Grant Naylor© 2020 Around The U.S.</p>
     </footer>
   </div>
+  <div class="modal__overlay">
+    <div class="modal">
+
+      <div class="modal__container">
+        <img src="./images/Close_Icon.png" alt="close icon" class="modal__close-icon">
+        <h3 class="modal__title">Edit profile</h3>
+        <form action="" class="form">
+          <input class="form__input form__input_type_name" value="Jacques Cousteau" type="text">
+          <input class="form__input form__input_type_description" value="Explorer" type="text">
+          <button class="form__save-button" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src='./index.js'></script>
 </body>

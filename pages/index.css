@@ -4,8 +4,11 @@
 @import url('../blocks/profile/profile.css');
 @import url('../blocks/gallery/gallery.css');
 @import url('../blocks/footer/footer.css');
+@import url('../blocks/modal/modal.css');
+@import url('../blocks/form/form.css');
 
 .page {
+  position: relative;
   min-width: 100%;
   background-color: black;
   padding: 0;
@@ -21,6 +24,7 @@
   }
 
 .page__container {
+  position: relative;
   max-width: 882px;
   margin: 0 auto;
   color: white;
