@@ -1,16 +1,14 @@
-# Project 4: Around The U.S.
+# Around The U.S.
 
-### Overview
+# Github Pages
+Please visit my site:
 
-* Figma
-* Images
+# Project Description
+The aim for this project was to provide a interactive user-experience with an ability to personalise their settings. The main purpose was to provide the user a means to upload images of their journey around the  U.S.
 
-**Figma**
+# Techniques & Technologies
+For the core layout a use of grid is fundamental in the design. The flexibility and responsive nature of grid makes this technology the perfect tool to embed the images in an organised fashion.
+However, for user interaction, JavaScript was implemented to supply the user with an ability to edit their name and a brief description. This was achieved through utilizing DOM technology and simple classList functions to generate a smooth user-friendly system.
 
-* [Link to the project in Figma](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+Further user functionality will be added later.
 
-**Images**
-
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
