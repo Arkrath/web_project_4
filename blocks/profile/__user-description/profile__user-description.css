@@ -1,0 +1,19 @@
+.profile__user-description {
+  margin: 7px 0 0 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+
+@media screen and (max-width: 480px) {
+  .profile__user-description {
+    font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0;
+  }
+}

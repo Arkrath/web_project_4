@@ -1,0 +1,19 @@
+.form__save-button {
+  margin: 48px 0 0 0;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: .3s;
+  }
+
+  .form__save-button:hover {
+  background-color:rgba(0, 0, 0, 0.8);
+  }

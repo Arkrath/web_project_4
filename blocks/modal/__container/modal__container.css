@@ -1,0 +1,7 @@
+.modal__container {
+position: relative;
+display: flex;
+flex-direction: column;
+margin: 36px;
+padding: 0;
+}
