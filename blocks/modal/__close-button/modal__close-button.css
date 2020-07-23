@@ -8,7 +8,7 @@
   cursor: pointer;
   transition: .3s;
   border: 0px;
-  background-image: url('../../../images/Close_Icon.svg');
+  background: url('../../../images/Close_Icon.svg');
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;

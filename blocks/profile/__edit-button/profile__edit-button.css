@@ -9,7 +9,7 @@
   transition: .3s;
   cursor: pointer;
   background-color: transparent;
-  background-image: url('../../../images/pencil_icon.svg');
+  background: url('../../../images/pencil_icon.svg');
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
