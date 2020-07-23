@@ -9,7 +9,7 @@
 <body class="page">
   <div class="page__container">
     <header class="header">
-      <img src="./images/AroundTheUS.png" alt="Site title" class="header__title">
+      <img src="./images/AroudTheUS.svg" alt="Site title" class="header__title">
     </header>
     <main>
     <section class="profile">
@@ -17,53 +17,51 @@
       <div class="profile__info">
         <div class="profile__user-container">
           <h1 class="profile__user-name">Jacques Cousteau</h1>
-          <div class="profile__edit-button"><img src="./images/pencil_icon.png" alt="pencil icon" class="profile__edit-icon"></div>
+          <button class="profile__edit-button"></button>
         </div>
         <p class="profile__user-description">Explorer</p>
       </div>
-      <div class="profile__add-button">
-        <img src="./images/plus_sign_icon.png" alt="plus sign icon" class="profile__add-icon">
-      </div>
+      <button class="profile__add-button"></button>
     </section>
     <section class="gallery">
       <ul class="gallery__grid">
         <li class="gallery__card">
-          <img src="./images/Yosemite-Valley.jpg" alt="Yosemite valley picture" class="gallery__card-image">
+          <div style="background-image: url('./images/Yosemite-Valley.jpg');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Yosemite Valley</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/lake_louise.png" alt="Lake Louise" class="gallery__card-image">
+          <div style="background-image: url('./images/lake_louise.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Lake Louise</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/bald_mountains.png" alt="bald mountains" class="gallery__card-image">
+          <div style="background-image: url('./images/bald_mountains.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Bald Mountains</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/latemar.png" alt="Yosemite valley picture" class="gallery__card-image">
+          <div style="background-image: url('./images/latemar.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Latemar</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/vanoise-national-park.png" alt="latemar mountains" class="gallery__card-image">
+          <div style="background-image: url('./images/vanoise-national-park.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Vanoise National Park</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
           </div>
         </li>
         <li class="gallery__card">
-          <img src="./images/lago_di_braies.png" alt="Vanoise national park" class="gallery__card-image">
+          <div style="background-image: url('./images/lago_di_braies.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Lago di Braies</h2>
             <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
@@ -78,9 +76,8 @@
   </div>
   <div class="modal__overlay">
     <div class="modal">
-
       <div class="modal__container">
-        <img src="./images/Close_Icon.png" alt="close icon" class="modal__close-icon">
+        <button class="modal__close-button"></button>
         <h3 class="modal__title">Edit profile</h3>
         <form action="#" class="form">
           <input class="form__input form__input_type_name" value="Jacques Cousteau" type="text">

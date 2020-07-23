@@ -9,6 +9,11 @@
   opacity: 1;
   transition: .3s;
   cursor: pointer;
+  background-color: black;
+  background-image: url('../../../images/plus_sign_icon.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 .profile__add-button:hover {

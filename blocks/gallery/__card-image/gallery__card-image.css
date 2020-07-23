@@ -1,7 +1,9 @@
 .gallery__card-image {
   margin: 0;
-  max-width: 282px;
+  min-width: 282px;
+  min-height: 282px;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
+  background-size: contain;
 }
 

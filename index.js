@@ -1,13 +1,12 @@
 //  Definitions
-let modalForm = document.querySelector('.form');
-let modalOverlay = document.querySelector('.modal__overlay');
-let profileUserName = document.querySelector('.profile__user-name');
-let profileUserDescription = document.querySelector('.profile__user-description');
-let formNameInput = document.querySelector('.form__input_type_name');
-let formDescriptionInput = document.querySelector('.form__input_type_description');
-let editProfileButton = document.querySelector('.profile__edit-button');
-let closeButton = document.querySelector('.modal__close-icon');
-
+const modalForm = document.querySelector('.form');
+const modalOverlay = document.querySelector('.modal__overlay');
+const profileUserName = document.querySelector('.profile__user-name');
+const profileUserDescription = document.querySelector('.profile__user-description');
+const formNameInput = document.querySelector('.form__input_type_name');
+const formDescriptionInput = document.querySelector('.form__input_type_description');
+const editProfileButton = document.querySelector('.profile__edit-button');
+const closeButton = document.querySelector('.modal__close-button');
 
 
 //  Functions
@@ -20,17 +19,17 @@ function toggleModal() {
 editProfileButton.addEventListener('click', toggleModal);
 
 // -- Closes modal window by clicking on close button then runs
-//      the display toggle
+//     the display toggle
 closeButton.addEventListener('click', toggleModal);
 
 // -- Returns current name value from main page into modal inputs if closed before submit.
-closeButton.addEventListener('click', function(){
+closeButton.addEventListener('click', () => {
 formNameInput.value = profileUserName.textContent;
 formDescriptionInput.value = profileUserDescription.textContent;
 });
 
-// -- Saves the edits made in Edit Profile modal clicking Save button.
-modalForm.addEventListener('submit', function(stopRefresh) {
+// -- Saves the edits made in Edit Profile modal when clicking Save button.
+modalForm.addEventListener('submit', stopRefresh => {
   stopRefresh.preventDefault();
   profileUserName.textContent = formNameInput.value;
   profileUserDescription.textContent = formDescriptionInput.value;
