@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-content: center;
   color: black;
-  margin: auto;
+  margin: 0 auto;
   max-width: 246px;
+  height: 100%;
 }

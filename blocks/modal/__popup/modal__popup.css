@@ -1,0 +1,18 @@
+.modal__popup {
+max-width: 430px;
+height: 330px;
+background-color: white;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+
+@media screen and (max-width:600px) {
+  .modal__popup {
+    margin: 0 35px;
+  }
+
+}

@@ -1,6 +1,6 @@
 //  Definitions
 const modalForm = document.querySelector('.form');
-const modalOverlay = document.querySelector('.modal__overlay');
+//const modalDisplay = document.querySelector('.modal');
 const profileUserName = document.querySelector('.profile__user-name');
 const profileUserDescription = document.querySelector('.profile__user-description');
 const formNameInput = document.querySelector('.form__input_type_name');
@@ -11,9 +11,19 @@ const closeButton = document.querySelector('.modal__close-button');
 
 //  Functions
 // -- Toggles the class modal_open to have modal appear/disappear
+//function toggleModal() {
+  //modalDisplay.classList.toggle('modal_open');
+//}
+
 function toggleModal() {
-  modalOverlay.classList.toggle('modal_open');
+  let modalDisplay = document.querySelector('.modal');
+  if (modalDisplay.style.display === "none") {
+    modalDisplay.style.display = "flex";
+  } else {
+    modalDisplay.style.display = "none";
+  }
 }
+
 // -- Opens modal window by clicking on edit button then runs
 //     the display toggle to display window.
 editProfileButton.addEventListener('click', toggleModal);

@@ -17,11 +17,11 @@
       <div class="profile__info">
         <div class="profile__user-container">
           <h1 class="profile__user-name">Jacques Cousteau</h1>
-          <button class="profile__edit-button"></button>
+          <button aria-label="Edit user profile" class="profile__edit-button"></button>
         </div>
         <p class="profile__user-description">Explorer</p>
       </div>
-      <button class="profile__add-button"></button>
+      <button aria-label="Add picture to gallery" class="profile__add-button"></button>
     </section>
     <section class="gallery">
       <ul class="gallery__grid">
@@ -29,42 +29,42 @@
           <div style="background-image: url('./images/Yosemite-Valley.jpg');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Yosemite Valley</h2>
-            <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
+            <button aria-label="favourite image" class="gallery__card-heart"></button>
           </div>
         </li>
         <li class="gallery__card">
           <div style="background-image: url('./images/lake_louise.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Lake Louise</h2>
-            <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
+            <button aria-label="favourite image" class="gallery__card-heart"></button>
           </div>
         </li>
         <li class="gallery__card">
           <div style="background-image: url('./images/bald_mountains.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Bald Mountains</h2>
-            <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
+            <button aria-label="favourite image" class="gallery__card-heart"></button>
           </div>
         </li>
         <li class="gallery__card">
           <div style="background-image: url('./images/latemar.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Latemar</h2>
-            <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
+            <button aria-label="favourite image" class="gallery__card-heart"></button>
           </div>
         </li>
         <li class="gallery__card">
           <div style="background-image: url('./images/vanoise-national-park.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Vanoise National Park</h2>
-            <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
+            <button aria-label="favourite image" class="gallery__card-heart"></button>
           </div>
         </li>
         <li class="gallery__card">
           <div style="background-image: url('./images/lago_di_braies.png');" class="gallery__card-image"></div>
           <div class="gallery__card-info">
             <h2 class="gallery__card-title">Lago di Braies</h2>
-            <img src="./images/card__heart.svg" alt="love heart for favorite" class="gallery__card-heart">
+            <button aria-label="favourite image" class="gallery__card-heart"></button>
           </div>
         </li>
       </ul>
@@ -74,16 +74,18 @@
       <p class="footer__copyright">Grant Naylor© 2020 Around The U.S.</p>
     </footer>
   </div>
-  <div class="modal__overlay">
-    <div class="modal">
-      <div class="modal__container">
-        <button class="modal__close-button"></button>
-        <h3 class="modal__title">Edit profile</h3>
-        <form action="#" class="form">
-          <input class="form__input form__input_type_name" value="Jacques Cousteau" type="text">
-          <input class="form__input form__input_type_description" value="Explorer" type="text">
-          <button class="form__save-button" type="submit">Save</button>
-        </form>
+  <div class="modal" style="display: none;">
+    <div class="modal__overlay">
+      <div class="modal__popup">
+        <div class="modal__container">
+          <button aria-label="Close edit profile window" class="modal__close-button"></button>
+          <h3 class="modal__title">Edit profile</h3>
+          <form action="#" class="form">
+           <input class="form__input form__input_type_name" value="Jacques Cousteau" type="text">
+           <input class="form__input form__input_type_description" value="Explorer" type="text">
+           <button class="form__save-button" type="submit">Save</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
