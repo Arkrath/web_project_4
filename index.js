@@ -1,6 +1,6 @@
 //  Definitions
 const modalForm = document.querySelector('.form');
-//const modalDisplay = document.querySelector('.modal');
+const modalDisplay = document.querySelector('.modal');
 const profileUserName = document.querySelector('.profile__user-name');
 const profileUserDescription = document.querySelector('.profile__user-description');
 const formNameInput = document.querySelector('.form__input_type_name');
@@ -10,18 +10,9 @@ const closeButton = document.querySelector('.modal__close-button');
 
 
 //  Functions
-// -- Toggles the class modal_open to have modal appear/disappear
-//function toggleModal() {
-  //modalDisplay.classList.toggle('modal_open');
-//}
-
+//-- Toggles the class modal_open to have modal appear/disappear
 function toggleModal() {
-  let modalDisplay = document.querySelector('.modal');
-  if (modalDisplay.style.display === "none") {
-    modalDisplay.style.display = "flex";
-  } else {
-    modalDisplay.style.display = "none";
-  }
+ modalDisplay.classList.toggle('modal_open');
 }
 
 // -- Opens modal window by clicking on edit button then runs
@@ -39,8 +30,8 @@ formDescriptionInput.value = profileUserDescription.textContent;
 });
 
 // -- Saves the edits made in Edit Profile modal when clicking Save button.
-modalForm.addEventListener('submit', stopRefresh => {
-  stopRefresh.preventDefault();
+modalForm.addEventListener('submit', event => {
+  event.preventDefault();
   profileUserName.textContent = formNameInput.value;
   profileUserDescription.textContent = formDescriptionInput.value;
 
