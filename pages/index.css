@@ -7,7 +7,8 @@
 @import url('../blocks/form/form.css');
 @import url('../blocks/modal/modal.css');
 @import url('../blocks/modal/_open/modal_open.css');
-
+@import url('../blocks/modal/__popup/_theme/modal__popup_theme_expand-image.css');
+@import url('../blocks/modal/__close/_theme/modal__close_theme_expand-image.css');
 .page {
   position: relative;
   min-width: 100%;

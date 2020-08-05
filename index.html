@@ -25,48 +25,7 @@
     </section>
     <section class="gallery">
       <ul class="gallery__grid">
-        <li class="gallery__card">
-          <div style="background-image: url('./images/Yosemite-Valley.jpg');" class="gallery__card-image"></div>
-          <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Yosemite Valley</h2>
-            <button aria-label="favourite image" class="gallery__card-heart"></button>
-          </div>
-        </li>
-        <li class="gallery__card">
-          <div style="background-image: url('./images/lake_louise.png');" class="gallery__card-image"></div>
-          <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Lake Louise</h2>
-            <button aria-label="favourite image" class="gallery__card-heart"></button>
-          </div>
-        </li>
-        <li class="gallery__card">
-          <div style="background-image: url('./images/bald_mountains.png');" class="gallery__card-image"></div>
-          <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Bald Mountains</h2>
-            <button aria-label="favourite image" class="gallery__card-heart"></button>
-          </div>
-        </li>
-        <li class="gallery__card">
-          <div style="background-image: url('./images/latemar.png');" class="gallery__card-image"></div>
-          <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Latemar</h2>
-            <button aria-label="favourite image" class="gallery__card-heart"></button>
-          </div>
-        </li>
-        <li class="gallery__card">
-          <div style="background-image: url('./images/vanoise-national-park.png');" class="gallery__card-image"></div>
-          <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Vanoise National Park</h2>
-            <button aria-label="favourite image" class="gallery__card-heart"></button>
-          </div>
-        </li>
-        <li class="gallery__card">
-          <div style="background-image: url('./images/lago_di_braies.png');" class="gallery__card-image"></div>
-          <div class="gallery__card-info">
-            <h2 class="gallery__card-title">Lago di Braies</h2>
-            <button aria-label="favourite image" class="gallery__card-heart"></button>
-          </div>
-        </li>
+
       </ul>
     </section>
   </main>
@@ -74,11 +33,11 @@
       <p class="footer__copyright">Grant Naylor© 2020 Around The U.S.</p>
     </footer>
   </div>
-  <div class="modal">
+  <div class="modal modal_type_edit-profile">
     <div class="modal__overlay">
       <div class="modal__popup">
         <div class="modal__container">
-          <button aria-label="Close edit profile window" class="modal__close-button"></button>
+          <button aria-label="Close window" class="modal__close"></button>
           <h3 class="modal__title">Edit profile</h3>
           <form action="#" class="form">
            <input class="form__input form__input_type_name" value="Jacques Cousteau" type="text">
@@ -89,5 +48,44 @@
       </div>
     </div>
   </div>
+  <div class="modal modal_type_add-card">
+    <div class="modal__overlay">
+      <div class="modal__popup">
+        <div class="modal__container">
+          <button aria-label="Close window" class="modal__close"></button>
+          <h3 class="modal__title">New Place</h3>
+          <form action="#" class="form">
+           <input class="form__input form__input_type_card-title" value="Title" type="text">
+           <input class="form__input form__input_type_card-link" value="Image Link" type="url">
+           <button class="form__save-button" type="submit">Create</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal_type_expand-image">
+    <div class="modal__overlay">
+      <div class="modal__popup modal__popup_theme_expand-image">
+        <div class="modal__container modal__container_theme_expand-image">
+          <button aria-label="Close window" class=" modal__close modal__close_theme_expand-image"></button>
+          <figure class="modal__figure">
+           <img class="modal__image" src="" alt="">
+           <figcaption class="modal__caption"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+  <template class="card-template">
+    <li class="gallery__card">
+      <button aria-label="delete card" class="gallery__card-delete"></button>
+      <div class="gallery__card-image" style="">
+      </div>
+      <div class="gallery__card-info">
+        <h2 class="gallery__card-title"></h2>
+        <button aria-label="favourite image" class="gallery__card-heart"></button>
+      </div>
+    </li>
+  </template>
   <script src='./index.js'></script>
 </body>

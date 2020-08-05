@@ -4,6 +4,7 @@
   min-height: 282px;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
-  background-size: contain;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-

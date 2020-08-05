@@ -4,7 +4,7 @@
 @import url('./__card-info/gallery__card-info.css');
 @import url('./__card-title/gallery__card-title.css');
 @import url('./__card/gallery__card.css');
-
+@import url('./__card-delete/gallery__card-delete.css');
 
 .gallery {
 margin: 48px auto 0 auto;

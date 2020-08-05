@@ -1,4 +1,4 @@
-.modal__close-button {
+.modal__close {
   position: absolute;
   margin-top: -85px;
   right: -85px;
@@ -16,6 +16,6 @@
 }
 
 
-.modal__close-button:hover {
+.modal__close:hover {
 opacity: .5;
 }

@@ -1,9 +1,12 @@
 @import url('./__overlay/modal__overlay.css');
 @import url('./__container/modal__container.css');
+@import url('./__container/_theme/modal__container_theme_expand-image.css');
 @import url('./__title/modal__title.css');
-@import url('./__close-button/modal__close-button.css');
+@import url('./__close/modal__close.css');
 @import url('./__popup/modal__popup.css');
-
+@import url('./__figure/modal__figure.css');
+@import url('./__image/modal__image.css');
+@import url('./__caption/modal__caption.css');
 
 .modal {
 position: fixed;

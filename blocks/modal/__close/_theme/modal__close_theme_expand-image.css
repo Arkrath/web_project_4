@@ -1,0 +1,13 @@
+.modal__close_theme_expand-image {
+  margin-top: -45px;
+  right: -55px;
+}
+
+@media screen and (max-width:480px) {
+  .modal__close_theme_expand-image{
+    width: 35px;
+    height: 35px;
+    margin-top: -45px;
+    right: -20px;
+  }
+}
