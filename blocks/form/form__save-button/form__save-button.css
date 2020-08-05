@@ -1,7 +1,8 @@
 .form__save-button {
-  margin: 48px 0 0 0;
+  margin: 48px 36px 36px 36px;
+  padding: 0;
   height: 50px;
-  width: 100%;
+
   background-color: black;
   color: white;
   border: 0;
@@ -12,6 +13,7 @@
   cursor: pointer;
   border-radius: 2px;
   transition: .3s;
+
   }
 
   .form__save-button:hover {
