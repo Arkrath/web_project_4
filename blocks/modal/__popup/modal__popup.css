@@ -1,11 +1,8 @@
 .modal__popup {
+display: block;
 position: relative;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-items: center;
 max-width: 430px;
-min-height: 330px;
+max-height: 330px;
 }
 
 
