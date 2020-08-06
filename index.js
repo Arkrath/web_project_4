@@ -49,7 +49,7 @@ const initialCards = [{
 //  Functions
 ////  Calls the initial gallery__cards to be displayed
 initialCards.forEach(data => {
-  const cardElement = cardTemplate.cloneNode(true);
+	const cardElement = cardTemplate.cloneNode(true);
 
 	const cardImage = cardElement.querySelector('.gallery__card-image');
 	const cardTitle = cardElement.querySelector('.gallery__card-title');
@@ -57,27 +57,27 @@ initialCards.forEach(data => {
 	const cardDeleteButton = cardElement.querySelector('.gallery__card-delete');
 
 	cardTitle.textContent = data.name;
-  cardImage.style.backgroundImage = `url(${data.link})`;
+	cardImage.style.backgroundImage = `url(${data.link})`;
 
-  cardImage.addEventListener('click', () => {
-    const modalImage = modalExpandImage.querySelector('.modal__image');
-    const modalCaption = modalExpandImage.querySelector('.modal__caption');
+	cardImage.addEventListener('click', () => {
+		const modalImage = modalExpandImage.querySelector('.modal__image');
+		const modalCaption = modalExpandImage.querySelector('.modal__caption');
 
-    modalImage.src = data.link;
-    modalCaption.textContent = data.name;
-    toggleModal(modalExpandImage)
-    })
-  cardLikeButton.addEventListener('click', () => {
-    //changeLikeState()
+		modalImage.src = data.link;
+		modalCaption.textContent = data.name;
+		toggleModal(modalExpandImage)
 	})
+	cardLikeButton.addEventListener('click', () => {
+		//changeLikeState()
+	});
 
 	cardDeleteButton.addEventListener('click', () => {
-	  //handleCardDelete()
-  })
+		//handleCardDelete()
+	});
 
 
 	list.prepend(cardElement);
-})
+});
 
 //// Toggle Modal Windows Open/Close
 function toggleModal(modal) {
@@ -98,15 +98,15 @@ editProfileButton.addEventListener('click', () => {
 
 ////  Closes edit profile modal by clicking on close button
 closeEditProfileButton.addEventListener('click', () => {
-  toggleModal(modalEditProfile);
+	toggleModal(modalEditProfile);
 });
 ////  Closes add card modal by clicking on close button
 closeAddCardButton.addEventListener('click', () => {
-  toggleModal(modalAddCard);
+	toggleModal(modalAddCard);
 });
 ////  Closes Expand Image modal by ciicking on close button
 closeExpandImageButton.addEventListener('click', () => {
-  toggleModal(modalExpandImage);
+	toggleModal(modalExpandImage);
 });
 
 ////  Defaults form values to main page value if closed before submit.

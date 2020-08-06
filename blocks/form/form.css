@@ -4,11 +4,13 @@
 .form {
 display: flex;
 flex-direction: column;
-max-width: 100%;
 flex: 0 0 auto;
 background-color: white;
 border-radius: 10px;
 margin: 0;
 padding: 0;
-
+min-width: 250px;
+width: 40vw;
+max-width: 430px;
+min-height: 330px;
 }

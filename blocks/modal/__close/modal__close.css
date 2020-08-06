@@ -1,7 +1,7 @@
 .modal__close {
   position: absolute;
-  margin-top: -85px;
-  right: -85px;
+  margin-top: -55px;
+  right: -55px;
   width: 55px;
   height: 55px;
   padding: 0;
@@ -18,4 +18,11 @@
 
 .modal__close:hover {
 opacity: .5;
+}
+
+@media screen and (max-width: 480px) {
+  .modal__close{
+  margin-top: -50px;
+  right: 0px;
+  }
 }
