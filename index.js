@@ -1,5 +1,4 @@
 ////  Modal
-const modalForm = document.querySelector('.form');
 const modalEditProfile = document.querySelector('.modal_type_edit-profile');
 const modalAddCard = document.querySelector('.modal_type_add-card');
 const modalExpandImage = document.querySelector('.modal_type_expand-image');
@@ -8,8 +7,15 @@ const modalExpandImage = document.querySelector('.modal_type_expand-image');
 const profileUserName = document.querySelector('.profile__user-name');
 const profileUserDescription = document.querySelector('.profile__user-description');
 ////  Forms
+////  Edit Profile Form
+const modalEditProfileForm = document.querySelector('.form');
 const formNameInput = document.querySelector('.form__input_type_name');
 const formDescriptionInput = document.querySelector('.form__input_type_description');
+////  Add Card Form
+const modalAddCardForm = document.querySelector('.form__add-card');
+//const formCardTitleInput = modalAddCardForm.querySelector('.form__input_type_card-title');
+//const formCardLinkInput = modalAddCardForm.querySelector('.form__input_type_card-link');
+const addCardSubmitButton = modalAddCardForm.querySelector('.form__save-button_theme_add-card');
 ////  Gallery
 const cardTemplate = document.querySelector('.card-template').content.querySelector('.gallery__card');
 const list = document.querySelector('.gallery__grid');
@@ -23,7 +29,6 @@ const closeAddCardButton = modalAddCard.querySelector('.modal__close');
 ////  Expand Image Buttons
 const closeExpandImageButton = modalExpandImage.querySelector('.modal__close');
 ////  Other
-
 
 
 const initialCards = [{
@@ -65,10 +70,11 @@ initialCards.forEach(data => {
 
 		modalImage.src = data.link;
 		modalCaption.textContent = data.name;
-		toggleModal(modalExpandImage)
-	})
+		toggleModal(modalExpandImage);
+	});
+	// Like card interaction
 	cardLikeButton.addEventListener('click', () => {
-		//changeLikeState()
+		cardLikeButton.classList.toggle("gallery__card-heart_active");
 	});
 
 	cardDeleteButton.addEventListener('click', () => {
@@ -116,10 +122,42 @@ closeEditProfileButton.addEventListener('click', () => {
 });
 
 ////  Saves the edits made in Edit Profile modal when clicking Save button.
-modalForm.addEventListener('submit', event => {
+modalEditProfileForm.addEventListener('submit', event => {
 	event.preventDefault();
 	profileUserName.textContent = formNameInput.value;
 	profileUserDescription.textContent = formDescriptionInput.value;
 
 	toggleModal(modalEditProfile);
 });
+
+//// Provides function to addCard to the list
+function addCard(cardTitle, cardImage) {
+	const cardElement = cardTemplate.cloneNode(true);
+	cardElement.querySelector('.gallery__card-title').textContent = cardTitle;
+	cardElement.querySelector('.gallery__card-image').value = cardImage;
+
+	list.prepend(cardElement);
+}
+
+addCardSubmitButton.addEventListener("click", () => {
+	const cardTitle = document.querySelector('.form__input_type_card-title');
+	const cardLink = document.querySelector('.form__input_type_card-link');
+
+	addCard(cardTitle.value, cardLink.value);
+
+	cardTitle.value = "";
+	cardLink.style.backgroundImage = `url(${cardLink.value})`;
+	toggleModal(modalAddCard);
+});
+
+/*addCardButton.addEventListener('click', function changeFirstCard(event) {
+  event.preventDefault();
+  toggleForm(addCardModal);
+  if(initialCards.length !== 0 && addCardModal.classList.contains('popup_open')) {
+    initialCards[0].name = cardNameInput.value;
+    initialCards[0].link = cardUrlInput.value;
+  }
+  cardNameInput.value = "";
+  cardUrlInput.value = "";
+  console.log(initialCards[0]); // this is printing {name: "", link: ""}
+});*/

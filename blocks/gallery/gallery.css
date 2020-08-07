@@ -1,5 +1,6 @@
 @import url('./__grid/gallery__grid.css');
 @import url('./__card-heart/gallery__card-heart.css');
+@import url('./__card-heart/_active/gallery__card-heart_active.css');
 @import url('./__card-image/gallery__card-image.css');
 @import url('./__card-info/gallery__card-info.css');
 @import url('./__card-title/gallery__card-title.css');

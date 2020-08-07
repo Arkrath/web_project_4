@@ -1,8 +1,11 @@
 .modal__image {
 margin: 0;
 padding: 0;
-max-width: 100%;
-
+min-width: 250px;
+width: 100%;
+max-width: 75vw;
+min-height: 330px;
+max-height: 80vh;;
 object-position: center;
-object-fit: contain;
+object-fit: cover;
 }
