@@ -130,7 +130,7 @@ modalEditProfileForm.addEventListener('submit', event => {
 	toggleModal(modalEditProfile);
 });
 
-//// Provides function to addCard to the list
+//// Provides function to add a gallery Card
 function addCard(cardTitle, cardImage) {
 	const cardElement = cardTemplate.cloneNode(true);
 	cardElement.querySelector('.gallery__card-title').textContent = cardTitle;
@@ -139,25 +139,15 @@ function addCard(cardTitle, cardImage) {
 	list.prepend(cardElement);
 }
 
-addCardSubmitButton.addEventListener("click", () => {
+addCardSubmitButton.addEventListener("click", event => {
+  event.preventDefault();
 	const cardTitle = document.querySelector('.form__input_type_card-title');
 	const cardLink = document.querySelector('.form__input_type_card-link');
 
 	addCard(cardTitle.value, cardLink.value);
-
 	cardTitle.value = "";
 	cardLink.style.backgroundImage = `url(${cardLink.value})`;
 	toggleModal(modalAddCard);
 });
 
-/*addCardButton.addEventListener('click', function changeFirstCard(event) {
-  event.preventDefault();
-  toggleForm(addCardModal);
-  if(initialCards.length !== 0 && addCardModal.classList.contains('popup_open')) {
-    initialCards[0].name = cardNameInput.value;
-    initialCards[0].link = cardUrlInput.value;
-  }
-  cardNameInput.value = "";
-  cardUrlInput.value = "";
-  console.log(initialCards[0]); // this is printing {name: "", link: ""}
-});*/
+
