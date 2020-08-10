@@ -1,5 +1,7 @@
 .gallery__card-heart_active {
   background-color: transparent;
   background: url('../../../../images/card__heart-active.svg');
-
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
