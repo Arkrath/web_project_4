@@ -1,6 +1,5 @@
 .modal_open {
   transition: opacity .3s linear;;
- /* display: flex;*/
   opacity: 1;
   visibility: visible;
 }

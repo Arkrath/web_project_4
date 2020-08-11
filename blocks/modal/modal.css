@@ -19,7 +19,6 @@ background-color: rgba(0, 0, 0, .5);
 flex-direction: column;
 align-items: center;
 justify-content: center;
-/*display: none; removed the get fade out working*/
 visibility: hidden;
 opacity: 0;
 transition: visibility 0s .3s, opacity .3s linear;

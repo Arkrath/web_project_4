@@ -14,7 +14,7 @@ const formNameInput = document.querySelector('.form__input_type_name');
 const formDescriptionInput = document.querySelector('.form__input_type_description');
 
 ////  Add Card Form
-const modalAddCardForm = document.querySelector('.form__add-card');
+const modalAddCardForm = document.querySelector('.form_add-card');
 const addCardSubmitButton = modalAddCardForm.querySelector('.form__save-button_theme_add-card');
 const inputTitle = document.querySelector('.form__input_type_card-title');
 const inputImage = document.querySelector('.form__input_type_card-link');
@@ -111,6 +111,11 @@ function toggleModal(modal) {
 	modal.classList.toggle('modal_open');
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////|  CODE BREAK  |////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 //// EVENT LISTENERS
 ////  Opens add card modal by clicking on add button
 addCardButton.addEventListener('click', () => {
@@ -122,8 +127,8 @@ modalAddCardForm.addEventListener('submit', event => {
   event.preventDefault();
   addCard(inputTitle.value, inputImage.value);
   toggleModal(modalAddCard);
-  inputTitle.value = "Title";
-  inputImage.value = "Image Link";
+  inputTitle.value = "";
+  inputImage.value = "";
 
 });
 
