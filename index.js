@@ -145,8 +145,8 @@ closeEditProfileButton.addEventListener('click', () => {
 ////  Closes add card modal by clicking on close button
 closeAddCardButton.addEventListener('click', () => {
   toggleModal(modalAddCard);
-  inputTitle.value = "Title";
-  inputImage.value = "Image Link";
+  inputTitle.value = "";
+  inputImage.value = "";
 
 });
 ////  Closes Expand Image modal by ciicking on close button
