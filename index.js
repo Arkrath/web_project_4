@@ -127,8 +127,7 @@ modalAddCardForm.addEventListener('submit', event => {
   event.preventDefault();
   addCard(inputTitle.value, inputImage.value);
   toggleModal(modalAddCard);
-  inputTitle.reset();
-  inputImage.reset();
+  modalAddCardForm.reset();
 
 });
 
