@@ -36,10 +36,12 @@
   <div class="modal modal_type_edit-profile">
         <div class="modal__popup">
             <button aria-label="Close window" class="modal__close"></button>
-            <form action="#" class="form" name="Edit Profile Form">
+            <form action="#" class="form" name="Edit Profile Form" novalidate>
               <h3 class="modal__title">Edit Profile</h3>
-              <input class="form__input form__input_type_name" value="Jacques Cousteau" type="text">
-              <input class="form__input form__input_type_description" value="Explorer" type="text">
+              <input class="form__input form__input_type_name" id="name-input" value="Jacques Cousteau" type="text" minlength="2" maxlength="40" required>
+              <span class="form__input-error" id="name-input-error"></span>
+              <input class="form__input form__input_type_description" id="description-input" minlength="2" maxlength="200" required value="Explorer" type="text">
+              <span class="form__input-error" id="description-input-error"></span>
               <button class="form__save-button" type="submit">Save</button>
             </form>
         </div>
@@ -47,10 +49,12 @@
   <div class="modal modal_type_add-card">
       <div class="modal__popup">
           <button aria-label="Close window" class="modal__close"></button>
-          <form action="#" class="form form_add-card" name="Add Card Form">
+          <form novalidate action="#" class="form form_add-card" name="Add Card Form">
             <h3 class="modal__title">New Place</h3>
-            <input class="form__input form__input_type_card-title" value="" placeholder="Title" type="text">
-            <input class="form__input form__input_type_card-link" value="" placeholder="image Link" type="url">
+            <input class="form__input form__input_type_card-title" id="title-input" minlength="2" maxlength="30" value="" placeholder="Title" type="text" required>
+            <span class="form__input-error" id="title-input-error"></span>
+            <input class="form__input form__input_type_card-link" id="link-input" value="" placeholder="Image Link" type="url" required>
+            <span class="form__input-error" id="link-input-error"></span>
             <button class="form__save-button form__save-button_theme_add-card" type="submit">Create</button>
           </form>
       </div>
@@ -74,5 +78,6 @@
       </div>
     </li>
   </template>
-  <script src='./index.js'></script>
+  <script src='./scripts/index.js'></script>
+  <script src='./scripts/validate.js'></script>
 </body>
