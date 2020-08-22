@@ -123,6 +123,15 @@ function toggleModal(modal) {
 /////////////////////////////////////////////////////|   Keypress   |////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// CREATE ESCAPE KEY PRESS TO CLOSE HANDLER AND FUNCTION
+function escapeHandler(modal){
+  const modalParent = document.querySelector('modal')
+  document.addEventListener('keydown',(event) => {
+      if (event.key === 'Escape' && modalParent.classList.contains('modal_open')) {
+        toggleModal(modal);
+      }
+    },
+  );
+}
 
 
 
