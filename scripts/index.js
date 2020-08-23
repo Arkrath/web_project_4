@@ -115,7 +115,10 @@ function cardDeleteHandler(event) {
 
 //// Toggle Modal Windows Open/Close
 function toggleModal(modal) {
-	modal.classList.toggle('modal_open');
+  modal.classList.toggle('modal_open');
+  escapeHandler(modal);
+	clickCloseHandler(modal);
+
 }
 
 
@@ -124,12 +127,11 @@ function toggleModal(modal) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// CREATE ESCAPE KEY PRESS TO CLOSE HANDLER AND FUNCTION
 function escapeHandler(modal){
-  const modalParent = document.querySelector('modal')
   document.addEventListener('keydown',(event) => {
-      if (event.key === 'Escape' && modalParent.classList.contains('modal_open')) {
+      if (event.key === 'Escape') {
         toggleModal(modal);
       }
-    },
+    }
   );
 }
 
@@ -174,7 +176,6 @@ function addCardSubmit(event) {
 ////  Opens ADD CARD modal
 addCardButton.addEventListener('click', () => {
   toggleModal(modalAddCard);
-  clickCloseHandler(modalAddCard);
 });
 
 ////  Opens EDIT PROFILE modal
@@ -182,7 +183,7 @@ editProfileButton.addEventListener('click', () => {
 	formNameInput.value = profileUserName.textContent;
 	formDescriptionInput.value = profileUserDescription.textContent;
 	toggleModal(modalEditProfile);
-	clickCloseHandler(modalEditProfile);
+
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -191,15 +192,7 @@ editProfileButton.addEventListener('click', () => {
 
 
 //// Closes ANY OPEN modal when clicking off form
-function clickCloseHandler(modal) {
-	const modalOpen = document.querySelector('.modal_open');
-	const modalVisible = modal.classList.contains('modal_open');
-	modalOverlay.addEventListener('click', (event) => {
-		if (event.target === modalOpen && modalVisible) {
-			toggleModal(modal);
-		}
-	});
-}
+
 
 
 ////  Close EDIT PROFILE modal
@@ -226,3 +219,12 @@ closeExpandImageButton.addEventListener('click', () => {
 	formNameInput.value = profileUserName.textContent;
 	formDescriptionInput.value = profileUserDescription.textContent;
 });
+
+function clickCloseHandler(modal) {
+	const modalOpen = document.querySelector('.modal_open');
+	modalOpen.addEventListener('click', (event) => {
+		if (event.target === modalOpen) {
+      modal.classList.remove('modal_open');
+		}else{ return; }
+	});
+}
