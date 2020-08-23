@@ -113,29 +113,47 @@ function cardDeleteHandler(event) {
 }
 
 
+
+
 //// Toggle Modal Windows Open/Close
 function toggleModal(modal) {
+  const isModalOpened = modal.classList.contains('modal_open');
   modal.classList.toggle('modal_open');
-  escapeHandler(modal);
-	clickCloseHandler(modal);
-
+  listenerToggle({ modal, isModalOpened });
 }
+
+
+const listenerToggle = ({ modal, isModalOpened }) => {
+	if (isModalOpened) {
+    modal.removeEventListener('click', handleClick);
+		modal.removeEventListener('keydown', handleEsc)
+
+	} else {
+    modal.addEventListener('click', handleClick);
+		modal.addEventListener('keydown', handleEsc);
+	}
+}
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////|   Keypress   |////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// CREATE ESCAPE KEY PRESS TO CLOSE HANDLER AND FUNCTION
-function escapeHandler(modal){
-  document.addEventListener('keydown',(event) => {
-      if (event.key === 'Escape') {
-        toggleModal(modal);
-      }
-    }
-  );
+
+/// Escape Key Close Modal Event
+
+const handleEsc = ({ keyCode }) => {
+  if (keyCode == 27) {
+    toggleModal();
+  }
+};
+
+
+/*window.addEventListener('keydown', (event) => {
+if(event.keycode === "Escape"){
+  toggleModal();
 }
-
-
+});*/
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////|    Submit    |////////////////////////////////////////////////////////
@@ -192,39 +210,32 @@ editProfileButton.addEventListener('click', () => {
 
 
 //// Closes ANY OPEN modal when clicking off form
-
+const handleClick = ({ target }) => {
+  if (target.classList.contains('modal_open')) {
+    toggleModal(target);
+  }
+};
 
 
 ////  Close EDIT PROFILE modal
 closeEditProfileButton.addEventListener('click', () => {
-	toggleModal(modalEditProfile);
-});
-
-////  Defaults form values to main page value if closed before submit.
-closeEditProfileButton.addEventListener('click', () => {
-
+  toggleModal(modalEditProfile);
 });
 
 
 ////  Closes ADD CARD modal
 closeAddCardButton.addEventListener('click', () => {
-	toggleModal(modalAddCard);
+  toggleModal(modalAddCard);
 	inputTitle.value = "";
 	inputImage.value = "";
 
 });
 ////  Closes EXPAND IMAGE modal
 closeExpandImageButton.addEventListener('click', () => {
-	toggleModal(modalExpandImage);
+  toggleModal(modalExpandImage);
 	formNameInput.value = profileUserName.textContent;
 	formDescriptionInput.value = profileUserDescription.textContent;
 });
 
-function clickCloseHandler(modal) {
-	const modalOpen = document.querySelector('.modal_open');
-	modalOpen.addEventListener('click', (event) => {
-		if (event.target === modalOpen) {
-      modal.classList.remove('modal_open');
-		}else{ return; }
-	});
-}
+
+
