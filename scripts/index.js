@@ -118,9 +118,7 @@ function cardDeleteHandler(event) {
 function toggleModal(modal) {
 	const isModalOpened = modal.classList.contains('modal_open');
 	modal.classList.toggle('modal_open');
-	listenerToggle({
-		modal, isModalOpened
-	});
+	listenerToggle({modal, isModalOpened});
 }
 
 
@@ -165,7 +163,8 @@ function handleEsc(event, modal) {
 
 
 
-window.addEventListener('keydown', handleEsc);
+window.addEventListener('keydown',() => {
+handleEsc(event, modal)});
 
 
 
