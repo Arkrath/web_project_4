@@ -126,7 +126,7 @@ function toggleModal(modal) {
 const listenerToggle = ({ modal, isModalOpened }) => {
 	if (isModalOpened) {
     modal.removeEventListener('click', handleClick);
-		modal.removeEventListener('keydown', handleEsc)
+		modal.removeEventListener('keydown', handleEsc);
 
 	} else {
     modal.addEventListener('click', handleClick);
@@ -142,19 +142,16 @@ const listenerToggle = ({ modal, isModalOpened }) => {
 
 /// Escape Key Close Modal Event
 
-const handleEsc = ({ keyCode }) => {
+function handleEsc(event) {
   const modal = document.querySelector('.modal');
-  if (keyCode === 27) {
+  if(event.key === "Escape"){
     toggleModal(modal);
   }
 };
 
+window.addEventListener('keydown', handleEsc);
 
-window.addEventListener('keydown', (event) => {
-if(event.keycode === 27){
-  toggleModal();
-}
-});
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////|    Submit    |////////////////////////////////////////////////////////
@@ -237,6 +234,4 @@ closeExpandImageButton.addEventListener('click', () => {
 	formNameInput.value = profileUserName.textContent;
 	formDescriptionInput.value = profileUserDescription.textContent;
 });
-
-
 
