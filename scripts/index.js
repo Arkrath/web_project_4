@@ -1,5 +1,4 @@
 ////  Modal
-const modalOverlay = document.querySelector('.modal');
 const modalEditProfile = document.querySelector('.modal_type_edit-profile');
 const modalAddCard = document.querySelector('.modal_type_add-card');
 const modalExpandImage = document.querySelector('.modal_type_expand-image');
@@ -142,12 +141,25 @@ const listenerToggle = ({ modal, isModalOpened }) => {
 
 /// Escape Key Close Modal Event
 
-function handleEsc(event) {
-  const modal = document.querySelector('.modal');
-  if(event.key === "Escape"){
-    toggleModal(modal);
-  }
-};
+function handleEsc(event, modal) {
+	if (modal === modalAddCard) {
+		if (event.key === "Escape") {
+			toggleModal(modalAddCard);
+		}
+	}
+	if (modal === modalEditProfile) {
+		if (event.key === "Escape") {
+			toggleModal(modalEditProfile);
+		}
+	}
+	if (modal === modalExpandImage) {
+		if (event.key === "Escape") {
+			toggleModal(modalExpandImage);
+		}
+	}
+}
+
+
 
 window.addEventListener('keydown', handleEsc);
 
