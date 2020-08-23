@@ -143,17 +143,18 @@ const listenerToggle = ({ modal, isModalOpened }) => {
 /// Escape Key Close Modal Event
 
 const handleEsc = ({ keyCode }) => {
-  if (keyCode == 27) {
-    toggleModal();
+  const modal = document.querySelector('.modal');
+  if (keyCode === 27) {
+    toggleModal(modal);
   }
 };
 
 
-/*window.addEventListener('keydown', (event) => {
-if(event.keycode === "Escape"){
+window.addEventListener('keydown', (event) => {
+if(event.keycode === 27){
   toggleModal();
 }
-});*/
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////|    Submit    |////////////////////////////////////////////////////////
