@@ -99,7 +99,7 @@ function createCard(title, image) {
 }
 ////  Calls the initial 6 gallery__cards to be displayed
 initialCards.forEach(data => {
-  const cardElement = createCard(data.name, data.link);
+	const cardElement = createCard(data.name, data.link);
 	list.append(cardElement);
 });
 
@@ -116,22 +116,26 @@ function cardDeleteHandler(event) {
 
 //// Toggle Modal Windows Open/Close
 function toggleModal(modal) {
-  const isModalOpened = modal.classList.contains('modal_open');
-  modal.classList.toggle('modal_open');
-  listenerToggle({ modal, isModalOpened });
+	const isModalOpened = modal.classList.contains('modal_open');
+	modal.classList.toggle('modal_open');
+	listenerToggle({
+		modal, isModalOpened
+	});
 }
 
 
-const listenerToggle = ({ modal, isModalOpened }) => {
+const listenerToggle = ({
+	modal, isModalOpened
+}) => {
 	if (isModalOpened) {
-    modal.removeEventListener('click', handleClick);
+		modal.removeEventListener('click', handleClick);
 		modal.removeEventListener('keydown', handleEsc);
 
 	} else {
-    modal.addEventListener('click', handleClick);
+		modal.addEventListener('click', handleClick);
 		modal.addEventListener('keydown', handleEsc);
 	}
-}
+};
 
 
 
@@ -192,7 +196,7 @@ function addCardSubmit(event) {
 	list.prepend(cardElement);
 	modalAddCardForm.reset();
 
-  toggleModal(modalAddCard);
+	toggleModal(modalAddCard);
 }
 
 
@@ -203,7 +207,7 @@ function addCardSubmit(event) {
 
 ////  Opens ADD CARD modal
 addCardButton.addEventListener('click', () => {
-  toggleModal(modalAddCard);
+	toggleModal(modalAddCard);
 });
 
 ////  Opens EDIT PROFILE modal
@@ -220,30 +224,31 @@ editProfileButton.addEventListener('click', () => {
 
 
 //// Closes ANY OPEN modal when clicking off form
-const handleClick = ({ target }) => {
-  if (target.classList.contains('modal_open')) {
-    toggleModal(target);
-  }
+const handleClick = ({
+	target
+}) => {
+	if (target.classList.contains('modal_open')) {
+		toggleModal(target);
+	}
 };
 
 
 ////  Close EDIT PROFILE modal
 closeEditProfileButton.addEventListener('click', () => {
-  toggleModal(modalEditProfile);
+	toggleModal(modalEditProfile);
 });
 
 
 ////  Closes ADD CARD modal
 closeAddCardButton.addEventListener('click', () => {
-  toggleModal(modalAddCard);
+	toggleModal(modalAddCard);
 	inputTitle.value = "";
 	inputImage.value = "";
 
 });
 ////  Closes EXPAND IMAGE modal
 closeExpandImageButton.addEventListener('click', () => {
-  toggleModal(modalExpandImage);
+	toggleModal(modalExpandImage);
 	formNameInput.value = profileUserName.textContent;
 	formDescriptionInput.value = profileUserDescription.textContent;
 });
-
