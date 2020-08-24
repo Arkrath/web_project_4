@@ -2,7 +2,7 @@
 const modalEditProfile = document.querySelector('.modal_type_edit-profile');
 const modalAddCard = document.querySelector('.modal_type_add-card');
 const modalExpandImage = document.querySelector('.modal_type_expand-image');
-
+let lastModalOpened = null;
 ////  Profile
 const profileUserName = document.querySelector('.profile__user-name');
 const profileUserDescription = document.querySelector('.profile__user-description');
@@ -111,6 +111,14 @@ function cardDeleteHandler(event) {
 	event.target.parentNode.remove();
 }
 
+
+
+const handleEsc = ({ keyCode }) => {
+  if (keyCode === 27) {
+    toggleModal(lastModalOpened);
+  }
+}
+/*
 function handleEsc(event, modal) {
 	if (event.key === "Escape") {
 		  (modal === modalAddCard); {
@@ -128,10 +136,8 @@ function handleEsc(event, modal) {
 		}
 	}
 }
-
-const listenerToggle = ({
-	modal, isModalOpened
-}) => {
+*/
+const listenerToggle = ({modal, isModalOpened}) => {
 	if (isModalOpened) {
 		modal.removeEventListener('click', handleClick);
 		modal.removeEventListener('keydown', handleEsc);
@@ -142,22 +148,38 @@ const listenerToggle = ({
 	}
 };
 
-function toggleModal(modal) {
+const toggleModal = modal => {
+  const isModalOpened = modal.classList.contains('modal_open');
+  modal.classList.toggle('modal_open');
+  lastModalOpened = modal;
+
+  if (isModalOpened) {
+		modal.removeEventListener('click', handleClick);
+		document.removeEventListener('keydown', handleEsc);
+
+	} else {
+		modal.addEventListener('click', handleClick);
+		document.addEventListener('keydown', handleEsc);
+	}
+}
+
+/*function toggleModal(modal) {
 	const isModalOpened = modal.classList.contains('modal_open');
 	modal.classList.toggle('modal_open');
 	listenerToggle({modal, isModalOpened});
-}
+}*/
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////|   Keypress   |////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Escape Key Close Modal Event
-
-window.addEventListener('keydown',() => {
+/*
+window.addEventListener('keydown',(event) => {
+  const modal = document.querySelector('.modal_open');
   handleEsc(event, modal);
 });
-
+*/
 
 
 
