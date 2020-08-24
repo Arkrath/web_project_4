@@ -111,16 +111,23 @@ function cardDeleteHandler(event) {
 	event.target.parentNode.remove();
 }
 
-
-
-
-//// Toggle Modal Windows Open/Close
-function toggleModal(modal) {
-	const isModalOpened = modal.classList.contains('modal_open');
-	modal.classList.toggle('modal_open');
-	listenerToggle({modal, isModalOpened});
+function handleEsc(event, modal) {
+	if (event.key === "Escape") {
+		  (modal === modalAddCard); {
+			toggleModal(modalAddCard);
+		}
+	}
+	if (event.key === "Escape") {
+		  (modal === modalEditProfile); {
+			toggleModal(modalEditProfile);
+		}
+	}
+	if (event.key === "Escape") {
+    (modal === modalExpandImage); {
+			toggleModal(modalExpandImage);
+		}
+	}
 }
-
 
 const listenerToggle = ({
 	modal, isModalOpened
@@ -135,7 +142,11 @@ const listenerToggle = ({
 	}
 };
 
-
+function toggleModal(modal) {
+	const isModalOpened = modal.classList.contains('modal_open');
+	modal.classList.toggle('modal_open');
+	listenerToggle({modal, isModalOpened});
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////|   Keypress   |////////////////////////////////////////////////////////
@@ -143,28 +154,10 @@ const listenerToggle = ({
 
 /// Escape Key Close Modal Event
 
-function handleEsc(event, modal) {
-	if (modal === modalAddCard) {
-		if (event.key === "Escape") {
-			toggleModal(modalAddCard);
-		}
-	}
-	if (modal === modalEditProfile) {
-		if (event.key === "Escape") {
-			toggleModal(modalEditProfile);
-		}
-	}
-	if (modal === modalExpandImage) {
-		if (event.key === "Escape") {
-			toggleModal(modalExpandImage);
-		}
-	}
-}
-
-
-
 window.addEventListener('keydown',() => {
-handleEsc(event, modal)});
+  handleEsc(event, modal);
+});
+
 
 
 
@@ -223,9 +216,7 @@ editProfileButton.addEventListener('click', () => {
 
 
 //// Closes ANY OPEN modal when clicking off form
-const handleClick = ({
-	target
-}) => {
+const handleClick = ({target}) => {
 	if (target.classList.contains('modal_open')) {
 		toggleModal(target);
 	}
