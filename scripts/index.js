@@ -1,8 +1,15 @@
+//// Modules import/Export
+import FormValidation from './FormValidation';
+import toggleModal from './utils';
+import defaultConfig from './utils';
+import card from './card';
+
 ////  Modal
 const modalEditProfile = document.querySelector('.modal_type_edit-profile');
 const modalAddCard = document.querySelector('.modal_type_add-card');
 const modalExpandImage = document.querySelector('.modal_type_expand-image');
 let lastModalOpened = null;
+
 ////  Profile
 const profileUserName = document.querySelector('.profile__user-name');
 const profileUserDescription = document.querySelector('.profile__user-description');
@@ -35,9 +42,33 @@ const closeAddCardButton = modalAddCard.querySelector('.modal__close');
 ////  Expand Image Buttons
 const closeExpandImageButton = modalExpandImage.querySelector('.modal__close');
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////|  CODE BREAK  |////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Create Class Instance
+const editProfileValidator = new FormValidation(defaultConfig, editProfileForm);
+const addCardValidator = new FormValidation(defaultConfig, addCardForm);
+
+// Activate Form Validation
+editProfileValidator.enableValidation();
+addCardValidator.enableValidation();
+
+//const card= new Card({text: "", link: ""}, '.card-template');
+
+
+
+/*const toggleModal = modal => {
+  const isModalOpened = modal.classList.contains('modal_open');
+  modal.classList.toggle('modal_open');
+  lastModalOpened = modal;
+
+  if (isModalOpened) {
+		modal.removeEventListener('click', handleClick);
+		document.removeEventListener('keydown', handleEsc);
+
+	} else {
+		modal.addEventListener('click', handleClick);
+		document.addEventListener('keydown', handleEsc);
+	}
+}*/
+
 
 // Initial array used to populate the first 6 cards as default.
 const initialCards = [{
@@ -60,57 +91,11 @@ const initialCards = [{
 	link: "https://code.s3.yandex.net/web-code/lago.jpg"
 }];
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////|  CODE BREAK  |////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//  Adds a new card
-function createCard(title, image) {
-	const cardElement = cardTemplate.cloneNode(true);
-	const cardImage = cardElement.querySelector('.gallery__card-image');
-	const cardTitle = cardElement.querySelector('.gallery__card-title');
-	const cardLikeButton = cardElement.querySelector('.gallery__card-heart');
-	const cardDeleteButton = cardElement.querySelector('.gallery__card-delete');
-
-	cardTitle.textContent = title;
-	cardImage.style.backgroundImage = `url(${image})`;
-
-	cardImage.addEventListener('click', () => {
-		const modalImage = modalExpandImage.querySelector('.modal__image');
-		const modalCaption = modalExpandImage.querySelector('.modal__caption');
-
-		modalImage.alt = title;
-		modalImage.src = image;
-		modalCaption.textContent = title;
-		toggleModal(modalExpandImage);
-	});
-	// Like card interaction
-	cardLikeButton.addEventListener('click', () => {
-		cardLikeToggle(cardLikeButton);
-	});
-
-	// Deletes the nearest card to the button being pressed
-	cardDeleteButton.addEventListener('click', (event) => {
-		cardDeleteHandler(event);
-	});
-
-	return cardElement;
-
-}
 ////  Calls the initial 6 gallery__cards to be displayed
 initialCards.forEach(data => {
 	const cardElement = createCard(data.name, data.link);
 	list.append(cardElement);
 });
-
-function cardLikeToggle(cardLikeButton) {
-	cardLikeButton.classList.toggle('gallery__card-heart_active');
-}
-
-function cardDeleteHandler(event) {
-	event.target.parentNode.remove();
-}
-
 
 
 const handleEsc = ({ keyCode }) => {
@@ -118,25 +103,9 @@ const handleEsc = ({ keyCode }) => {
     toggleModal(lastModalOpened);
   }
 }
-/*
-function handleEsc(event, modal) {
-	if (event.key === "Escape") {
-		  (modal === modalAddCard); {
-			toggleModal(modalAddCard);
-		}
-	}
-	if (event.key === "Escape") {
-		  (modal === modalEditProfile); {
-			toggleModal(modalEditProfile);
-		}
-	}
-	if (event.key === "Escape") {
-    (modal === modalExpandImage); {
-			toggleModal(modalExpandImage);
-		}
-	}
-}
-*/
+
+card.createCard()
+
 const listenerToggle = ({modal, isModalOpened}) => {
 	if (isModalOpened) {
 		modal.removeEventListener('click', handleClick);
@@ -147,40 +116,6 @@ const listenerToggle = ({modal, isModalOpened}) => {
 		modal.addEventListener('keydown', handleEsc);
 	}
 };
-
-const toggleModal = modal => {
-  const isModalOpened = modal.classList.contains('modal_open');
-  modal.classList.toggle('modal_open');
-  lastModalOpened = modal;
-
-  if (isModalOpened) {
-		modal.removeEventListener('click', handleClick);
-		document.removeEventListener('keydown', handleEsc);
-
-	} else {
-		modal.addEventListener('click', handleClick);
-		document.addEventListener('keydown', handleEsc);
-	}
-}
-
-/*function toggleModal(modal) {
-	const isModalOpened = modal.classList.contains('modal_open');
-	modal.classList.toggle('modal_open');
-	listenerToggle({modal, isModalOpened});
-}*/
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////|   Keypress   |////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// Escape Key Close Modal Event
-/*
-window.addEventListener('keydown',(event) => {
-  const modal = document.querySelector('.modal_open');
-  handleEsc(event, modal);
-});
-*/
-
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

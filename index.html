@@ -36,7 +36,7 @@
   <div class="modal modal_type_edit-profile">
         <div class="modal__popup">
             <button aria-label="Close window" class="modal__close"></button>
-            <form action="#" class="form" name="Edit Profile Form" novalidate>
+            <form action="#" class="form form_edit-profile" name="Edit Profile Form" novalidate>
               <h3 class="modal__title">Edit Profile</h3>
               <input class="form__input form__input_type_name" id="name-input" value="Jacques Cousteau" type="text" minlength="2" maxlength="40" required>
               <span class="form__input-error" id="name-input-error"></span>
@@ -71,13 +71,14 @@
   <template class="card-template">
     <li class="gallery__card">
       <button aria-label="delete card" class="gallery__card-delete"></button>
-      <div class="gallery__card-image" style=""></div>
+      <div class="gallery__card-image"></div>
       <div class="gallery__card-info">
         <h2 class="gallery__card-title"></h2>
         <button aria-label="favourite image" class="gallery__card-heart"></button>
       </div>
     </li>
   </template>
-  <script src='./scripts/index.js'></script>
-  <script src='./scripts/validate.js'></script>
+  <script type="module" src="./scripts/index.js"></script>
+  <script type="module" src='./scripts/FormValidation.js'></script>
+  <script type="module" src='./scripts/card.js'></script>
 </body>
