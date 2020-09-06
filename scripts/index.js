@@ -1,8 +1,9 @@
 //// Modules import/Export
-import FormValidation from './FormValidation';
-import toggleModal from './utils';
-import defaultConfig from './utils';
-import card from './card';
+import {defaultConfig} from './utils.js';
+import FormValidation from './FormValidation.js';
+import {toggleModal} from './utils.js';
+import card from './card.js';
+
 
 ////  Modal
 const modalEditProfile = document.querySelector('.modal_type_edit-profile');
@@ -22,7 +23,6 @@ const formDescriptionInput = document.querySelector('.form__input_type_descripti
 
 ////  Add Card Form
 const modalAddCardForm = document.querySelector('.form_add-card');
-///const addCardSubmitButton = modalAddCardForm.querySelector('.form__save-button_theme_add-card');
 const inputTitle = document.querySelector('.form__input_type_card-title');
 const inputImage = document.querySelector('.form__input_type_card-link');
 
@@ -43,31 +43,12 @@ const closeAddCardButton = modalAddCard.querySelector('.modal__close');
 const closeExpandImageButton = modalExpandImage.querySelector('.modal__close');
 
 // Create Class Instance
-const editProfileValidator = new FormValidation(defaultConfig, editProfileForm);
-const addCardValidator = new FormValidation(defaultConfig, addCardForm);
+const editProfileValidator = new FormValidation(defaultConfig, modalEditProfileForm);
+const addCardValidator = new FormValidation(defaultConfig, modalAddCardForm );
 
 // Activate Form Validation
 editProfileValidator.enableValidation();
 addCardValidator.enableValidation();
-
-//const card= new Card({text: "", link: ""}, '.card-template');
-
-
-
-/*const toggleModal = modal => {
-  const isModalOpened = modal.classList.contains('modal_open');
-  modal.classList.toggle('modal_open');
-  lastModalOpened = modal;
-
-  if (isModalOpened) {
-		modal.removeEventListener('click', handleClick);
-		document.removeEventListener('keydown', handleEsc);
-
-	} else {
-		modal.addEventListener('click', handleClick);
-		document.addEventListener('keydown', handleEsc);
-	}
-}*/
 
 
 // Initial array used to populate the first 6 cards as default.
@@ -93,7 +74,8 @@ const initialCards = [{
 
 ////  Calls the initial 6 gallery__cards to be displayed
 initialCards.forEach(data => {
-	const cardElement = createCard(data.name, data.link);
+  const card = new Card(data, '.card-template')
+	const cardElement = card.createCard();
 	list.append(cardElement);
 });
 

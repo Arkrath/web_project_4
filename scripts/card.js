@@ -1,4 +1,5 @@
-import toggleModal from './utils';
+import toggleModal from './utils.js';
+
 
 export default class Card {
   constructor(data, cardTemplateSelector){
@@ -44,7 +45,7 @@ export default class Card {
     const cardTitle = this._cardElement.querySelector('.gallery__card-title');
 
 
-    cardTitle.textContent = title;
+    cardTitle.textContent = this._text;
     cardImage.style.backgroundImage = `url(${this._link})`;
 
     this._addEventListeners();

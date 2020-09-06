@@ -1,5 +1,4 @@
 
-
 export const toggleModal = modal => {
   const isModalOpened = modal.classList.contains('modal_open');
   modal.classList.toggle('modal_open');

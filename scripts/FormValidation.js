@@ -42,7 +42,7 @@ export default class FormValidation {
   }
 
   _setEventListeners() {
-    const inputs = [this._formElement.querySelectorAll(this._settings.inputSelector)];
+    const inputs = [...this._formElement.querySelectorAll(this._settings.inputSelector)];
     const button = this._formElement.querySelector(this._settings.submitButtonSelector);
 
     inputs.forEach((input) => {
